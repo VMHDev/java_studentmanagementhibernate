@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 24, 2019 10:14:07 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="VMHPOJO.Checkexaminationdto" table="checkexaminationdto" catalog="module" optimistic-lock="version">
+        <composite-id name="id" class="VMHPOJO.CheckexaminationdtoId">
+            <key-many-to-one name="studentId" class="VMHPOJO.Studentdto" lazy="false">
+                <column name="StudentID" />
+            </key-many-to-one>
+            <key-many-to-one name="userName" class="VMHPOJO.Userdto" lazy="false">
+                <column name="UserName" length="50" />
+            </key-many-to-one>
+            <key-many-to-one name="classId" class="VMHPOJO.Classdto" lazy="false">
+                <column name="ClassID" />
+            </key-many-to-one>
+            <key-many-to-one name="subjectId" class="VMHPOJO.Subjectdto" lazy="false">
+                <column name="SubjectID" />
+            </key-many-to-one> 
+        </composite-id>
+        <property name="scoresType" type="string">
+            <column name="ScoresType" length="5" not-null="true" />
+        </property>
+        <property name="scoresWish" type="float">
+            <column name="ScoresWish" precision="4" not-null="true" />
+        </property>
+        <property name="scoresCheck" type="float">
+            <column name="ScoresCheck" precision="4" not-null="true" />
+        </property>
+        <property name="reason" type="string">
+            <column name="Reason" length="65535" />
+        </property>
+        <property name="statusCheck" type="char">
+            <column name="StatusCheck" length="1" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="CreatedDate" length="26" />
+        </property>
+        <property name="updatedDate" type="timestamp">
+            <column name="UpdatedDate" length="26" />
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="IsActive" />
+        </property>
+    </class>
+</hibernate-mapping>
