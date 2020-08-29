@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 17, 2019 4:28:30 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="VMHPOJO.Studentdto" table="studentdto" catalog="module" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="Id" />
+            <generator class="identity" />
+        </id>
+        <property name="studentCode" type="string">
+            <column name="StudentCode" length="10" not-null="true" />
+        </property>
+        <property name="studentName" type="string">
+            <column name="StudentName" length="100" />
+        </property>
+        <property name="gender" type="java.lang.Integer">
+            <column name="Gender" />
+        </property>
+        <property name="identityNumber" type="string">
+            <column name="IdentityNumber" length="15" />
+        </property>
+        <property name="classId" type="int">
+            <column name="ClassID" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="CreatedDate" length="26" />
+        </property>
+        <property name="updatedDate" type="timestamp">
+            <column name="UpdatedDate" length="26" />
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="IsActive" />
+        </property>
+    </class>
+</hibernate-mapping>
