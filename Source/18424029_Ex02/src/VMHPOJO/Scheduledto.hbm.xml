@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Aug 17, 2019 4:28:30 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="VMHPOJO.Scheduledto" table="scheduledto" catalog="module" optimistic-lock="version">
+        <composite-id name="id" class="VMHPOJO.ScheduledtoId">
+            <key-many-to-one name="classId" class="VMHPOJO.Classdto" lazy="false">
+                <column name="ClassID"/>
+            </key-many-to-one>
+            <key-many-to-one name="subjectId" class="VMHPOJO.Subjectdto" lazy="false">
+                <column name="SubjectID" />
+            </key-many-to-one>            
+        </composite-id>       
+        <property name="classRoom" type="string">
+            <column name="ClassRoom" length="10" not-null="true" />
+        </property>
+        <property name="createdDate" type="timestamp">
+            <column name="CreatedDate" length="26" />
+        </property>
+        <property name="updatedDate" type="timestamp">
+            <column name="UpdatedDate" length="26" />
+        </property>
+        <property name="isActive" type="java.lang.Boolean">
+            <column name="IsActive" />
+        </property>
+    </class>
+</hibernate-mapping>
